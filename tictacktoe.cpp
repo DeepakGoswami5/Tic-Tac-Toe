@@ -58,7 +58,7 @@ char Win(){
 }
 void Input(){
   int a;
-  cout << "Choose a number where you to mark your symbol ";
+  cout<< "It's  "  << player << "  turn.  " << "Choose a number where you to mark your symbol ";
   cin>>a;
   if (a==1){
     if (matrix[0][0] == '1')
@@ -129,7 +129,7 @@ void Input(){
       matrix[2][2] = player;
     else{
       cout << " Field is already in use try again !" << endl;
-      Input(); 
+      Input();
     }
   }
 };
@@ -152,7 +152,7 @@ int main(){
         break;
       }
       else if ( Win() == 'O'){
-        cout << "Y Wins !" << endl;
+        cout << "O Wins !" << endl;
         break;
       }
       else if (n == 9){
