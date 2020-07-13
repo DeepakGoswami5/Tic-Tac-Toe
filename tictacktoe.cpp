@@ -2,6 +2,7 @@
 using namespace std;
 char matrix[3][3] = {'1','2','3','4','5','6','7','8','9'};
 char player = 'X';
+int n;
 void Match(){
   system("cls");
   cout << "Tic Tac Toe v01"<<endl;
@@ -59,24 +60,78 @@ void Input(){
   int a;
   cout << "Choose a number where you to mark your symbol ";
   cin>>a;
-  if (a==1)
-    matrix[0][0] = player;
-  else if (a==2)
-    matrix[0][1] = player;
-  else if (a==3)
-    matrix[0][2] = player;
-  else if (a==4)
-    matrix[1][0] = player;
-  else if (a==5)
-    matrix[1][1] = player;
-  else if (a==6)
-    matrix[1][2] = player;
-  else if (a==7)
-    matrix[2][0] = player;
-  else if (a==8)
-    matrix[2][1] = player;
-  else if (a==9)
-    matrix[2][2] = player;
+  if (a==1){
+    if (matrix[0][0] == '1')
+      matrix[0][0] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==2){
+    if (matrix[0][1] == '2')
+      matrix[0][1] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==3){
+    if (matrix[0][2] == '3')
+      matrix[0][2] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==4){
+    if (matrix[1][0] == '4')
+      matrix[1][0] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==5){
+    if (matrix[1][1] == '5')
+      matrix[1][1] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==6){
+    if (matrix[1][2] == '6')
+      matrix[1][2] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==7){
+    if (matrix[2][0] == '7')
+      matrix[2][0] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==8){
+    if (matrix[2][1] == '8')
+      matrix[2][1] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input();
+    }
+  }
+  else if (a==9){
+    if (matrix[2][2] == '9')
+      matrix[2][2] = player;
+    else{
+      cout << " Field is already in use try again !" << endl;
+      Input(); 
+    }
+  }
 };
 
 void Turn(){
@@ -87,15 +142,21 @@ void Turn(){
 };
 
 int main(){
+    n = 0;
     while (1){
+      n++;
       Input();
       Match();
       if (Win() == 'X'){
-        cout << "X Wins" << endl;
+        cout << "X Wins !" << endl;
         break;
       }
       else if ( Win() == 'O'){
-        cout << "Y Wins" << endl;
+        cout << "Y Wins !" << endl;
+        break;
+      }
+      else if (n == 9){
+        cout << "It's a Draw !" << endl;
         break;
       }
       Turn();
